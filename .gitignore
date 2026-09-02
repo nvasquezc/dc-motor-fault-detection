@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Datos experimentales (se publican via Zenodo)
+data/**
+!data/.gitkeep
+
+# STM32CubeIDE
+firmware/Debug/
+firmware/Release/
+firmware/.settings/
+firmware/.cproject
+firmware/.project
+*.launch
+*.bak
+
+# Sistema
+.DS_Store
+Thumbs.db

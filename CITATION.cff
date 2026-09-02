@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Observador DC: plataforma de adquisicion y diagnostico para accionamientos de corriente continua en lazo cerrado"
+message: "Si utiliza este software, por favor citelo como se indica."
+type: software
+authors:
+  - family-names: "Vásquez C."
+    given-names: "Néstor O."
+    orcid: "https://orcid.org/PONER-SU-ORCID"
+    affiliation: "Jitter Ingeniería SAS"
+license: MIT
+repository-code: "https://github.com/SU-USUARIO/observador-dc"
+abstract: >
+  Plataforma embebida y de analisis para la adquisicion de telemetria
+  de accionamientos DC operando bajo control realimentado, con estimacion
+  conjunta de velocidad angular y perturbacion referida a la entrada
+  mediante filtro de Kalman sobre ARM Cortex-M4.
+keywords:
+  - motor DC
+  - filtro de Kalman
+  - deteccion de fallas
+  - STM32
