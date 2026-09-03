@@ -23,3 +23,16 @@ firmware/.project
 # Sistema
 .DS_Store
 Thumbs.db
+
+# STM32CubeIDE
+firmware/**/Debug/
+firmware/**/Release/
+firmware/**/.settings/
+*.o
+*.d
+*.su
+*.elf
+*.map
+*.list
+*.bin
+*.hex
