@@ -6,7 +6,7 @@ authors:
   - family-names: "Vásquez Castro"
     given-names: "Néstor Oswaldo"
     orcid: "https://orcid.org/0009-0003-6483-790X"
-    affiliation: "Universidad Central, Bogotá, Colombia"
+    affiliation: "Jitter Ingeniería SAS, Bogotá, Colombia"
 license: MIT
 repository-code: "https://github.com/nvasquezc/dc-motor-fault-detection"
 abstract: >
