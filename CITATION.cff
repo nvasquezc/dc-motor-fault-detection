@@ -1,21 +1,25 @@
 cff-version: 1.2.0
-title: "Observador DC: plataforma de adquisicion y diagnostico para accionamientos de corriente continua en lazo cerrado"
-message: "Si utiliza este software, por favor citelo como se indica."
+title: "Closed-loop fault dataset and detection for DC motor drives"
+message: "If you use this software, please cite it as below."
 type: software
 authors:
-  - family-names: "Vásquez C."
-    given-names: "Néstor O."
-    orcid: "https://orcid.org/PONER-SU-ORCID"
-    affiliation: "Jitter Ingeniería SAS"
+  - family-names: "Vásquez Castro"
+    given-names: "Néstor Oswaldo"
+    orcid: "https://orcid.org/0009-0003-6483-790X"
+    affiliation: "Universidad Central, Bogotá, Colombia"
 license: MIT
-repository-code: "https://github.com/SU-USUARIO/observador-dc"
+repository-code: "https://github.com/nvasquezc/dc-motor-fault-detection"
 abstract: >
-  Plataforma embebida y de analisis para la adquisicion de telemetria
-  de accionamientos DC operando bajo control realimentado, con estimacion
-  conjunta de velocidad angular y perturbacion referida a la entrada
-  mediante filtro de Kalman sobre ARM Cortex-M4.
+  Embedded acquisition and analysis platform for DC motor drives operating
+  under closed-loop control. Angular speed and input-referred disturbance
+  are jointly estimated on an ARM Cortex-M4 using a Kalman filter, enabling
+  fault signatures to be recorded under the feedback conditions in which
+  real drives operate. Fault severity is parameterized in physical units so
+  that detection thresholds transfer across test benches.
 keywords:
-  - motor DC
-  - filtro de Kalman
-  - deteccion de fallas
+  - DC motor
+  - Kalman filter
+  - fault detection
+  - predictive maintenance
+  - embedded systems
   - STM32
