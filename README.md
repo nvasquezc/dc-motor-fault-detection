@@ -35,26 +35,31 @@ be rebuilt on comparable hardware.
 
 ## Approach
 
-The drive is modeled as a second-order electromechanical system whose
-parameters drift as the machine degrades. An Extended Kalman Filter runs
-on-target, tracking:
+The drive is modeled as a first-order system whose input-referred
+disturbance absorbs everything the nominal model does not explain:
 
-| Parameter | Symbol | Physical meaning |
-|---|---|---|
-| Armature resistance | R | Winding degradation, thermal drift |
-| Back-EMF constant | Ke | Magnetic weakening |
-| Brush voltage drop | Vb | Commutator and brush wear |
+    w[k+1] = (1-a)·w[k] + b·(u[k] - d[k])
 
-Because these parameters vary slowly relative to the control bandwidth, the
-filter separates degradation from ordinary transients. **The residual — not
-the raw signal — carries the diagnostic information.** This is the same
-estimation structure that appears in embedded metrology without
-traceability infrastructure, where instrument drift must be recovered
-without access to a reference standard.
+A two-state Kalman filter runs on-target, jointly estimating angular speed
+`w` and the input-referred disturbance `d`. Process noise on `d` is set an
+order of magnitude below that of `w`, so the filter treats disturbance as a
+slowly-varying quantity and separates degradation from ordinary transients.
 
-Fault injection is parameterized in physical units and measured, not
-assumed. Each recorded run carries its severity as a measured quantity with
-a stated uncertainty, so thresholds derived here transfer to other setups.
+**The disturbance estimate — not the raw speed signal — carries the
+diagnostic information.** Under closed-loop control a rising fault is
+absorbed by the PI loop and largely disappears from the speed output, but
+it persists in `d_hat`.
+
+`d_hat` is a lumped quantity: it does not attribute degradation to a
+specific physical parameter. The contribution is therefore the mapping
+between **physically measured injected severity** and the observer
+response, characterized across operating points, rather than direct
+parameter identification.
+
+Speed is measured with the M/T method: pulse counting loses resolution at
+low speed and period measurement loses it at high speed, and fault
+signatures appear across the full operating range. Edge timestamps come
+from hardware capture, so interrupt latency does not enter the measurement.
 
 ---
 
