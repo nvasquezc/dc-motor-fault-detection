@@ -18,6 +18,7 @@ firmware/.settings/
 firmware/.cproject
 firmware/.project
 *.launch
+!firmware/observer-mx/*.launch
 *.bak
 
 # Sistema
