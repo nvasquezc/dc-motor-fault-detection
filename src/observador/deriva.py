@@ -23,7 +23,7 @@ PUERTO = "COM11"
 BAUD = 921600
 
 DUTY = 50               # % de duty durante todo el ensayo
-DURACION_MIN = 30       # minutos
+DURACION_MIN = 180      # minutos
 INTERVALO_REPORTE = 60  # segundos entre lineas de consola
 
 
