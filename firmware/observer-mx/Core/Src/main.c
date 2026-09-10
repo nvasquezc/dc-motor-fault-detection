@@ -58,12 +58,13 @@
 #define VREF           3.3f
 
 /*=========================================================
-=   MODELO IDENTIFICADO
-=   w[k+1] = (1-a) w[k] + b (u[k] - d[k])
-=   u, d en % de duty ; w en RPM
+=   MODELO IDENTIFICADO  (barrido 20260909 + escalon 20260909)
+=   K   = 1.0654 rpm/%   (R2 = 0.99928)
+=   tau = 45.8 ms        (media; varia 34-58 ms con el punto
+=                         de operacion, ver fig03)
 =========================================================*/
-float mod_a = 0.0500f;    /* PLACEHOLDER - identificar (Parte 4) */
-float mod_b = 0.1000f;    /* PLACEHOLDER - identificar (Parte 4) */
+float mod_a = 0.196165f;
+float mod_b = 0.208994f;
 
 /*=========================================================
 =   FILTRO DE KALMAN  x = [w_hat, d_hat]
@@ -74,7 +75,7 @@ float P21 = 0.0f,   P22 = 100.0f;
 
 float kf_q1 = 0.50f;      /* ruido de proceso en w */
 float kf_q2 = 0.02f;      /* ruido de proceso en d (lento = degradacion) */
-float kf_R  = 0.50f;      /* varianza de la medida M/T [RPM^2] */
+float kf_R =  0.1227f;     /* varianza intra-punto medida [rpm^2] */
 
 /*=========================================================
 =   MEDICION M/T  (compartidas con la ISR de TIM4)
