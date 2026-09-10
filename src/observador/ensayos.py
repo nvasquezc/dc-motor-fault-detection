@@ -123,7 +123,7 @@ def barrido(puerto: str = PUERTO,
 
             # El signo de w_raw esta invertido (QA/QB sin permutar):
             # se trabaja con la magnitud.
-            w = df["w_raw"].abs()
+            w = df["w_raw"]
             pct_glitch = 100.0 * (df["flags"] & F_GLITCH).astype(bool).mean()
             pct_stall = 100.0 * (df["flags"] & F_STALL).astype(bool).mean()
 
@@ -211,6 +211,7 @@ def guardar(df_res: pd.DataFrame,
 # ---------------------------------------------------------------
 # PUNTO DE ENTRADA
 # ---------------------------------------------------------------
+
 def main_barrido():
     commit = obtener_commit()
     if commit.endswith("-dirty"):
